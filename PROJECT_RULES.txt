@@ -1,0 +1,175 @@
+RESTAURANT BILLING & MANAGEMENT SYSTEM
+PROJECT DEVELOPMENT & DELIVERY RULEBOOK (V1.0)
+============================================================
+Project root: Desktop/Restaurant_Billing_Technical_Assessment/
+Reference: Restaurant_Billing_Technical_Assessment.docx
+Purpose: A shared rulebook for planning, coding, testing and submission.
+
+IMPORTANT DISTINCTION
+[A] ASSESSMENT = what the company explicitly asked for.
+[B] OUR RULE = how we will implement and deliver the project.
+[C] PROPOSED = useful options, not mandatory assessment features.
+
+01. OFFICIAL ASSESSMENT: GOAL [A]
+- Build a small Restaurant Billing & Management System.
+- It must support a clear, demonstrable minimum flow:
+  RESTAURANT ORDER -> ITEMS -> FINAL CUSTOMER BILL.
+- Think like restaurant staff: features must be practical and fast to use.
+- This is an open-ended assessment, not a fixed feature checklist.
+- Prioritize real, working features over a larger collection of incomplete ones.
+
+02. OFFICIAL ASSESSMENT: TIME AND EVALUATION [A]
+- Design, develop, test and submit within ONE DAY.
+- Follow the exact final submission deadline provided by the interviewer.
+- Evaluation considers thoughtful features and prioritization, amount of
+  fully working functionality, code quality, data modelling, maintainability,
+  error handling, validation, reliability, and usable UI/UX.
+- Six complete, reliable features may be better than ten partial features.
+- The UI should be clear, logically organized, fast and easy for staff;
+  heavy visual polish is not required.
+- The evaluator will test the application: do not show fake success states,
+  placeholder workflows or broken controls as finished functionality.
+
+03. OFFICIAL ASSESSMENT: TECHNOLOGY [A]
+- Any comfortable frontend/backend framework and SQL/NoSQL database may
+  be used, unless the interviewer separately restricts the stack.
+- Open-source packages and AI-assisted development are allowed.
+- Every generated implementation must be understandable and explainable.
+- No framework, login module, staff roles, tax scheme or reporting dashboard
+  is explicitly compulsory in the supplied document.
+
+04. OFFICIAL ASSESSMENT: SUBMISSION [A]
+- Supply COMPLETE source code and a Git repository URL OR ZIP archive.
+- Supply README.md and accurate instructions to start the application.
+- Explain database setup/migrations when applicable.
+- Provide demo/test credentials only if authentication is implemented.
+- README must state the technology stack, implemented features,
+  application architecture, database, local run steps, known issues,
+  and features to add if more time were available.
+
+05. DEVELOPMENT PRIORITY & SCOPE [B]
+- The order -> items -> bill flow is the FIRST priority and must work end-to-end.
+- Finish core frontend + backend + persistence before optional enhancements.
+- No decorative dashboard may substitute for working billing operations.
+- Every displayed amount must be calculated consistently, not hard-coded.
+- Freeze optional scope early enough to leave time for testing and README.
+- No unrequested feature or dependency should be added without a reason.
+
+06. SUGGESTED MODULES (NOT DOCUMENT MANDATES) [C]
+- Core: menu/items, create/edit an order, quantity and pricing,
+  generate a final bill, persist and retrieve the bill.
+- If time permits: payment records, bill history, print receipt,
+  table/takeaway mode, basic daily reports, item management.
+- Authentication, role management, advanced inventory, multi-branch,
+  complex taxation and kitchen systems are OPTIONAL; do not assume required.
+- Confirm local tax/business assumptions instead of silently inventing them.
+
+07. ROOT FOLDER & FILE ORGANIZATION [B]
+- Use only this project root:
+  Desktop/Restaurant_Billing_Technical_Assessment/
+- Proposed top-level items:
+  frontend/          UI, pages, components and frontend API integration
+  backend/           APIs, validation, business logic and data persistence
+  docs/              design decisions, architecture, optional screenshots
+  README.md          complete setup and submission guide
+  PROJECT_RULES.txt  this rulebook
+  .gitignore         exclude dependencies, secrets and generated files
+  .env.example       example configuration WITHOUT real credentials
+- Subfolders must follow feature/responsibility, not random naming.
+- Separate UI, API routes, controllers/services, validation and data access.
+- Use descriptive, consistent folder names, filenames and function names.
+- Avoid unnecessary nesting, duplicate components and giant unrelated files.
+- Share the intended folder tree BEFORE the first implementation batch.
+- For each new file: show its exact path and whether it is ADD or REPLACE.
+
+08. CODE OUTPUT & DOWNLOAD FORMAT: MANDATORY [B]
+- For EVERY coding batch, deliver a DOWNLOADABLE ZIP containing the
+  complete, latest runnable project source (not only scattered snippets).
+- Also provide a DOWNLOADABLE .txt FILE for EACH added or modified source
+  file; its content must be the ENTIRE FINAL FILE, not a patch or excerpt.
+- If an existing source file changes, label it REPLACE and supply the
+  complete replacement content from first line to last line so the user
+  can select all, copy and paste it over the old file in one operation.
+- For new files, label ADD and supply the entire file content.
+- Keep the original source extension in the real project (.jsx/.js/.css/etc.);
+  the extra .txt files are delivery copies for easy copy-paste.
+- The ZIP must include the root-level project tree and a delivery manifest
+  listing each ADD/REPLACE file path.
+- Do NOT deliver snippets, diff-only changes, 'keep existing code', '...'
+  placeholders, incomplete imports or unspecified manual edits.
+- Do NOT delete or overwrite unrelated working code or user data.
+- Deliver only files actually created/verified; never invent download URLs.
+- If the latest project files are unavailable, clearly say which files are
+  missing rather than pretending a full updated project ZIP is complete.
+
+09. CHANGE EXPLANATION: MAXIMUM TWO LINES [B]
+- For EACH change or file group, explain in at most TWO SHORT LINES:
+  what changed and why it matters to user/workflow/reliability.
+- Do not write lengthy 'what/why/how' essays during coding delivery.
+- Detailed usage or test steps may be separately listed when essential.
+- Keep explanations in simple Hinglish; code comments and README in clear
+  professional English unless requested otherwise.
+
+10. COMMENTS & CODE READABILITY [B]
+- Every source file starts with a short header comment describing:
+  file path, responsibility, and key integrations/dependencies.
+- For JSX/CSS/JSON or other syntax, use only VALID comments for that format;
+  JSON/.env-like files must remain parseable (no invalid comment syntax).
+- Comment non-obvious decisions, calculations and tricky edge cases.
+- No excessive comment noise, dead commented code or misleading comments.
+- Use small focused functions, consistent formatting and meaningful names.
+- No hard-coded credentials, copied secrets or machine-specific absolute paths.
+
+11. FUNCTIONAL & DATA INTEGRITY RULES [B]
+- Buttons, forms, tables, filters and dialogs must really perform their task.
+- Do not show success until the backend/database confirms success.
+- Validate required fields, quantity, currency amounts and item existence.
+- Handle failed requests, loading/empty states, duplicate actions and errors.
+- Keep order totals correct when items, quantities or discounts change.
+- Persist orders and bills; data must survive browser refresh/restart.
+- Keep backend and frontend API contracts synchronized.
+- Use transactions/atomic operations where needed for financial consistency.
+- Avoid accidental duplicate bills or payments on repeated clicks.
+
+12. UI/UX & RESPONSIVENESS RULES [B]
+- Prioritize speed of staff operations and clarity over flashy effects.
+- Make desktop and mobile layouts usable with no clipped content.
+- Use readable text sizes, consistent spacing, clear labels and feedback.
+- Every major action should have understandable next/previous steps.
+- Avoid unnecessary cards, animations and visual clutter.
+- Support clear printing/receipt format if printing is implemented.
+
+13. TESTING & QUALITY GATE [B]
+- After each batch: verify imports/build, API integration and main flows.
+- Test at least: empty order, invalid quantity, item changes,
+  totals, bill generation, repeat-click prevention, refresh/persistence,
+  backend failure handling and mobile responsiveness.
+- If code execution cannot be performed, say 'NOT VERIFIED' explicitly.
+- Do not claim build/test passed unless it really ran successfully.
+- Resolve blocker-level defects before adding nice-to-have features.
+
+14. EACH CODING RESPONSE FORMAT [B]
+1) Batch name and objective.
+2) Full file list with ADD / REPLACE and exact project-relative paths.
+3) Maximum 2 lines on what changed and why.
+4) Download link: COMPLETE updated project ZIP.
+5) Download links: full copy-paste .txt for EACH affected source file.
+6) Exact run/test commands and brief verification result.
+7) Any limitations or remaining issues stated plainly.
+
+15. FINAL DELIVERY CHECKLIST [B]
+[ ] End-to-end order -> items -> final bill works with persisted data.
+[ ] All displayed controls work, or unfinished features are removed.
+[ ] Frontend/backend start using documented commands.
+[ ] README and database setup instructions are accurate.
+[ ] .env.example provided; actual secrets and node_modules excluded.
+[ ] Final complete source ZIP or usable Git repository available.
+[ ] If used, test credentials are provided safely for the demo.
+[ ] Known issues and future plans are honestly documented.
+[ ] No false 'tested' claims, broken downloads or incomplete files.
+
+WORKING AGREEMENT
+- Until the user changes a rule, follow this document for every coding batch.
+- Requirements in the assessment take precedence over optional ideas.
+- If time/scope conflicts arise, preserve the working core billing flow.
+============================================================

@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Personal notebook - DO NOT PUSH
+notebook.text
+# Personal notes
+notebook.text
+
+# Private environment variables
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Logs and system files
+*.log
+.DS_Store
+
+# Private notes
+notebook.text
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and builds
+node_modules/
+dist/
+build/
+
+# System files
+.DS_Store
+*.log

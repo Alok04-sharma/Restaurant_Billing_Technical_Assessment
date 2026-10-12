@@ -1,0 +1,115 @@
+/*
+ * Path: frontend/src/index.css
+ * Responsibility: Tailwind CSS v4 entry point with a small, consistent restaurant UI system.
+ * Integration: Imported by the Vite-generated src/main.jsx file.
+ */
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #14251c;
+  background: #f7f8f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@layer components {
+  .eyebrow {
+    @apply mb-2 text-xs font-bold uppercase tracking-[0.17em] text-emerald-800;
+  }
+  .page-title {
+    @apply text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl;
+  }
+  .page-subtitle {
+    @apply mt-2 max-w-2xl text-sm leading-6 text-slate-500;
+  }
+  .section-title {
+    @apply text-lg font-bold tracking-tight text-slate-900;
+  }
+  .panel {
+    @apply rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6;
+  }
+  .field-label {
+    @apply block text-sm font-semibold text-slate-700;
+  }
+  .field-input {
+    @apply mt-2 block min-h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-normal text-slate-900 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-100;
+  }
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center gap-2 rounded-lg bg-emerald-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700;
+  }
+  .btn-outline {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50;
+  }
+  .btn-danger {
+    @apply inline-flex min-h-10 items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm font-semibold text-red-700 hover:bg-red-100;
+  }
+  .icon-button {
+    @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-emerald-700;
+  }
+  .status-pill {
+    @apply rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide;
+  }
+  .status-open {
+    @apply bg-emerald-50 text-emerald-700;
+  }
+  .status-muted {
+    @apply bg-slate-100 text-slate-600;
+  }
+  .success-note {
+    @apply rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800;
+  }
+}
+
+/* Receipt printing: print only the finalized invoice, not dashboard/navigation. */
+@media print {
+  @page {
+    size: auto;
+    margin: 12mm;
+  }
+  body,
+  #root {
+    background: white !important;
+  }
+  body * {
+    visibility: hidden !important;
+  }
+  #invoice-print,
+  #invoice-print * {
+    visibility: visible !important;
+  }
+  #invoice-print {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+  #invoice-print table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #invoice-print tr {
+    break-inside: avoid;
+  }
+}
